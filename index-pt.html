@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<a href="index.html">English</a> | <a href="index-it.html">Italiano</a> | <a href="index-pt.html">Português</a>
+<head>
+    <meta name="google-site-verification" content="iUUOSB9drcOCB3RRAo3rrpyt5LPSU7QxlNopxN-xTHM" />
+    <meta name="google-site-verification" content="amxGWoUm7zCKRO0vY8UTSodG-cwrvBiqNy-GHwGrs08" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTIVAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Estilos para personalizar la barra de scroll -->
+    <style>
+        /* Personalizar la barra de scroll globalmente */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff4d4d;
+        }
+
+        /* Personalizar solo la sección de eventos */
+        #events::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        #events::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        #events::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+
+        #events::-webkit-scrollbar-thumb:hover {
+            background: #ff4d4d;
+        }
+    </style>
+</head>
+<script>
+    function openVideo() {
+        document.getElementById("videoModal").classList.remove("hidden");
+        document.getElementById("videoPlayer").play();
+    }
+
+    function closeVideo() {
+        document.getElementById("videoModal").classList.add("hidden");
+        document.getElementById("videoPlayer").pause();
+    }
+</script>
+<body>
+    <div class="min-h-screen bg-black text-white">
+        <!-- Audio oculto para el clic -->
+<audio id="click-sound">
+    <source src="Sonidolata.mp4" type="audio/mpeg">
+</audio> 
+        <!-- Navigation -->
+ <!-- Navigation -->
+        <nav class="fixed w-full z-50 bg-black/90 px-4 py-3 border-b border-zinc-800">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Left side: Menu, Logo, and Brand -->
+                <div class="flex items-center space-x-8">
+                    <button class="lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                            <line x1="4" x2="20" y1="12" y2="12"/>
+                            <line x1="4" x2="20" y1="6" y2="6"/>
+                            <line x1="4" x2="20" y1="18" y2="18"/>
+                        </svg>
+                    </button>
+                    <div class="flex items-center space-x-4">
+                        <img src="IMAGENLOGO.png" alt="ICE-CYL Logo" class="h-10 w-10">
+                        <span class="text-xl font-bold tracking-tight">ICE-CYL</span>
+                    </div>
+                    <!-- Desktop Navigation Menu -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-white hover:text-red-500 transition" onclick="playSound()">Início</a>
+                        <a href="#products" class="text-white hover:text-red-500 transition" onclick="playSound()">Produtos</a>
+                        <a href="#events" class="text-white hover:text-red-500 transition" onclick="playSound()">Eventos</a>
+                        <a href="#tres-valles" class="text-white hover:text-red-500 transition" onclick="playSound()">Sobre nós</a>
+                        <a href="Blog.html" class="text-white hover:text-red-500 transition" onclick="window.open('Blog.html', '_blank'); playSound(); return false;">Blog</a>
+                        <a href="store.html" target="_blank" class="text-white hover:text-red-500 transition font-bold">Store</a> <!-- ENLACE A LA TIENDA -->
+                        <a href="#Footer" class="text-white hover:text-red-500 transition" onclick="playSound()">Contacto</a>
+                    </div>
+                </div>
+                <!-- Right side: Search and Sign In -->
+                <div class="flex items-center space-x-6">
+                    <button class="text-white hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.3-4.3"/>
+                        </svg>
+                    </button>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-red-700 transition">
+                        Iniciar sessão
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Navigation Menu (Hidden by default) -->
+            <div class="lg:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 hidden">
+                    <a href="#" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Início</a>
+                    <a href="#products" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Produtos</a>
+                    <a href="#events" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Eventos</a>
+                    <a href="#tres-valles" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Sobre nós</a>
+                    <a href="store.html" target="_blank" class="text-white hover:text-red-500 transition font-bold">Store</a> <!-- ENLACE A LA TIENDA -->
+                    <a href="#Footer" class="block px-3 py-2 text-white hover:bg-red-600 rounded-md transition" onclick="playSound()">Contacto</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <div class="relative h-screen">
+            <img src="escenarionuevo.png" alt="Hero" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                <div class="max-w-7xl mx-auto px-4 h-full flex items-end pb-20">
+                    <div class="max-w-2xl">
+                        <h1 class="text-5xl font-bold mb-4">O futuro das bebidas</h1>
+                        <p class="text-xl mb-6">De Castilla y León</p>
+                        <button onclick="openVideo()" class="bg-red-600 text-white px-6 py-3 rounded-full font-bold flex items-center space-x-2 hover:bg-red-700 transition">
+                            <span>Watch Now</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Modal de video (inicialmente oculto) -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden">
+    <div class="relative bg-black p-4 rounded-lg w-full max-w-3xl">
+        <button onclick="closeVideo()" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+        <video id="videoPlayer" class="w-full" controls>
+            <source src="videoyou.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+        <!-- Featured Stories Grid -->
+        <div id="products" class="bg-zinc-900 py-16">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold mb-8">Os nossos produtos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Story 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden">
+                        <img src="latablu.jpeg" alt="Racing Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-0 p-4">
+                                <span class="text-sm text-red-500 font-bold">ICE-CYL Mirtilo</span>
+                                <h3 class="text-xl font-bold mt-1">Mirtilo com auto-arrefecimento</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Story 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden">
+                        <img src="Barrilcolegeo.jpg" alt="Sports Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-0 p-4">
+                                <span class="text-sm text-red-500 font-bold">Barril de auto-arrefecimento</span>
+                                <h3 class="text-xl font-bold mt-1">Barril de auto-arrefecimento</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Story 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden">
+                        <img src="latacherry.jpeg" alt="Biking Story" class="w-full h-50 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-0 p-4">
+                                <span class="text-sm text-red-500 font-bold">ICE-CYL Cereja</span>
+                                <h3 class="text-xl font-bold mt-1">Cereja com auto-arrefecimento</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botón para desplegar más productos -->
+<div class="mt-8 text-center">
+    <button id="viewMoreBtn" onclick="toggleProducts()" class="inline-flex items-center space-x-2 text-red-500 font-bold hover:text-red-400 transition">
+        <span>Ver todos os produtos</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+        </svg>
+    </button>
+</div>
+
+<!-- Productos ocultos al inicio -->
+<div id="extraProducts" class="hidden mt-8 flex space-x-6 px-4 justify-center">
+    
+    <!-- Extra Product 1 -->
+    <div class="min-w-[300px]">
+        <div class="group cursor-pointer relative overflow-hidden rounded-lg">
+            <img src="latamiel.jpeg" alt="Energy Boost" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-4">
+                    <span class="text-sm text-red-500 font-bold">ICE-CYL Mel</span>
+                    <h3 class="text-xl font-bold mt-1">Mel com auto-arrefecimento</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extra Product 2 -->
+    <div class="min-w-[300px]">
+        <div class="group cursor-pointer relative overflow-hidden rounded-lg">
+            <img src="latabasica.jpeg" alt="Hydro Cool" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-4">
+                    <span class="text-sm text-red-500 font-bold">ICE-CYL Bebida energética</span>
+                    <h3 class="text-xl font-bold mt-1">Energia com auto-arrefecimento</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript para mostrar/ocultar productos -->
+<script>
+    function toggleProducts() {
+        let extraProducts = document.getElementById("extraProducts");
+        let buttonText = document.getElementById("viewMoreBtn").querySelector("span");
+
+        if (extraProducts.classList.contains("hidden")) {
+            extraProducts.classList.remove("hidden");
+            buttonText.textContent = "Hide Products";
+        } else {
+            extraProducts.classList.add("hidden");
+            buttonText.textContent = "View All Products";
+        }
+    }
+</script>
+        <!-- Events Section -->
+         <div id="events" class="bg-zinc-900 py-16">
+        <div class="bg-zinc-900 py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8">Próximos eventos</h2>
+                <!-- Contenedor con scroll horizontal -->
+        <div class="overflow-x-auto">
+            <div class="flex space-x-6 min-w-full px-4">
+                <!-- Event 1 -->
+                <a href="https://nosalive.com/" target="_blank" class="group block">
+                <div class="group cursor-pointer relative overflow-hidden rounded-lg min-w-[300px]">
+                    <img src="NOSALIVE.jpg" alt="NOS alive 2025" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">NOS Alive 2025</h3>
+                            <p class="text-gray-300">Julho 11, 2025 • Oeiras, Portugal</p>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+
+                <!-- Event 2 -->
+                <a href="https://superbocksuperrock.pt/en/" target="_blank" class="group block">
+                <div class="group cursor-pointer relative overflow-hidden rounded-lg min-w-[300px]">
+                    <img src="super.jpg" alt="Super Bock Super Rock" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Super Bock Super Rock</h3>
+                            <p class="text-gray-300">Julho 18, 2025 • Sesimbra, Portugal</p>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+
+                <!-- Event 3 -->
+                <a href="https://arena.meo.pt/en/" target="_blank" class="group block">
+                <div class="group cursor-pointer relative overflow-hidden rounded-lg min-w-[300px]">
+                    <img src="Meo.jpg" alt="MEO Sudoeste" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">MEO Sudoeste</h3>
+                            <p class="text-gray-300">Julho 18, 2025 • Zambujeira do Mar, Portugal </p>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+
+                <!-- Event 4 -->
+                <a href="https://www.festivalvilardemouros.pt/" target="_blank" class="group block">
+                <div class="group cursor-pointer relative overflow-hidden rounded-lg min-w-[300px]">
+                    <img src="Pilar.jpg" alt="EDP Vilar de Mouros" class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">EDP Vilar de Mouros</h3>
+                            <p class="text-gray-300"> Agosto 21, 2025 • Caminha, Portugal</p>
+                        </div>
+                    </div>
+                </div>
+                    </a>
+
+                <!-- Event 5 -->
+                <a href="https://www.boomfestival.org/" target="_blank" class="group block">
+                <div class="group cursor-pointer relative overflow-hidden rounded-lg min-w-[300px]">
+                    <img src="Boom.jpg" alt="Boom Festival " class="w-80 h-72 object-cover transform group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Boom Festival</h3>
+                            <p class="text-gray-300">Julho 17, 2025 • Idanha-a-Nova, portugal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+             </a>
+
+
+             <!-- JavaScript para reproducir el sonido -->
+     <script>
+        function playSound() {
+            let sound = document.getElementById("click-sound");
+            sound.volume = 0.5; // Ajusta el volumen (0.0 a 1.0)
+            sound.play();
+        }
+    </script>
+</body>
+</html>
+<main>
+    <section id="tres-valles" class="bg-black text-white py-16">
+        
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-red-500">A energia dos três vales</h2>
+            <p class="text-lg max-w-3xl mx-auto leading-relaxed">
+                Desde tempos imemoriais, a natureza é uma fonte de força, vitalidade e resistência. No coração da Península Ibérica, três regiões juntaram-se para dar origem a uma bebida única, resultado perfeito da fusão entre o sabor e o poder natural.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <!-- Arándano de Velilla -->
+                <div class="bg-zinc-900 p-6 rounded-lg shadow-lg">
+                    <img src="arandanos.jpg" alt="Arándanos de Velilla" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-2xl font-bold text-red-500">O poder do mirtilo Velilla</h3>
+                    <p class="mt-4 text-gray-300">
+                        Em Velilla del Río Carrión, onde os rios cristalinos atravessam as montanhas, crescem mirtilos de um azul profundo que reflecte a sua pureza e riqueza em antioxidantes. Desde a antiguidade, os habitantes da aldeia confiam neste fruto para manter a energia nas exigentes estradas de montanha.
+                    </p>
+                </div>
+    
+                <!-- Cereza de la Sierra de Francia -->
+                <div class="bg-zinc-900 p-6 rounded-lg shadow-lg">
+                    <img src="cereza.jpg" alt="Cereza de la Sierra de Francia" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-2xl font-bold text-red-500">O poder da cereja da Serra de França</h3>
+                    <p class="mt-4 text-gray-300">
+                        Na Serra de França, em Salamanca, as cerejeiras florescem num vermelho vibrante, símbolo de vitalidade. Há gerações que estes frutos são conhecidos pela sua capacidade de revitalizar o corpo, proporcionando frescura e resistência de uma forma natural.
+                    </p>
+                </div>
+    
+                <!-- Miel del Bierzo -->
+                <div class="bg-zinc-900 p-6 rounded-lg shadow-lg">
+                    <img src="miel.jpg" alt="Miel del Bierzo" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-2xl font-bold text-red-500">A resistência do mel de Bierzo</h3>
+                    <p class="mt-4 text-gray-300">
+                        Proveniente das colinas do Bierzo, o mel dourado é um tesouro de energia natural. Utilizado desde há séculos como fonte de vigor e de recuperação, a sua doçura não só realça o sabor, como também fornece o impulso necessário para continuar.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="mt-12">
+                <h3 class="text-3xl font-bold text-red-500">Uma bebida que une natureza e energia</h3>
+                <p class="text-lg max-w-3xl mx-auto leading-relaxed mt-4 text-gray-300">
+                  Inspirada no poder destes três ingredientes, a nossa bebida combina o melhor da natureza para hidratar e revitalizar. A sua fórmula única oferece um equilíbrio perfeito entre frescura, sabor e funcionalidade, ideal para quem procura ultrapassar os seus limites, manter-se ativo e enfrentar todos os desafios com energia renovada.
+                </p>
+                <p class="text-xl font-bold text-white mt-6">
+                    Descubra a essência dos três vales. Recarregue o seu corpo, desperte a sua energia e conquiste o seu dia.
+                </p>
+            </div>
+        </div>
+    </section>
+        <!-- Footer -->
+    <section id="Footer" class="bg-black text-white py-16">
+        <footer class="bg-zinc-950 text-gray-400">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Company Info -->
+                    <div class="space-y-4">
+                        <img src="IMAGENLOGO.png" alt="Snowflake Logo" class="h-10 w-10">
+                        <p class="text-sm">Inovar o futuro das bebidas com tecnologia de auto-aquecimento e auto-arrefecimento.</p>
+                        <div class="flex space-x-4">
+                             <a href="https://www.tiktok.com/@icecylenergy" target="_blank" className="hover:text-white transition">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+    </svg>
+</a>
+                            <a href="https://www.instagram.com/icecylenergy/" target="_blank" class="hover:text-white transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/icecylenergy-4006a834b/" target="_blank" class="hover:text-white transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61573037371808" target="_blank" className="hover:text-white transition">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+ </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-white font-bold mb-4">Ligações rápidas</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#tres-valles" class="hover:text-white transition">Sobre nós</a></li>
+                            <li><a href="#products" class="hover:text-white transition">Produtos</a></li>
+                            <li><a href="#events" class="hover:text-white transition">Eventos</a></li>
+                           <a href="https://bestinpackaging.wordpress.com/2012/12/17/the-self-cooling-technology-and-the-future-part-3/" 
+   target="_blank" 
+   class="hover:text-white transition">
+   Blog
+</a>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div>
+                        <h3 class="text-white font-bold mb-4">Apoio</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white transition">Contactar-nos</a></li>
+                            <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+                            <li><a href="#" class="hover:text-white transition">Informações de envio</a></li>
+                            <li><a href="#" class="hover:text-white transition">Devoluções</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <h3 class="text-white font-bold mb-4">Manter-se atualizado</h3>
+                        <p class="text-sm mb-4">Subscreva a nossa newsletter para obter as últimas actualizações e ofertas exclusivas.</p>
+                        <form class="space-y-2">
+                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-zinc-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <button class="w-full bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Subscrever</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="border-t border-zinc-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm">&copy; 2024 A sua empresa. Todos os direitos reservados.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-sm hover:text-white transition">Política de privacidade</a>
+                        <a href="#" class="text-sm hover:text-white transition">Termos do serviço</a>
+                        <a href="#" class="text-sm hover:text-white transition">Política de cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
